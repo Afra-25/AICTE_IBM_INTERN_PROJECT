@@ -59,10 +59,13 @@ def show():
     else:
         messagebox.showerror("Error", "Wrong Secret Key")
         code.set("")
-#LOGO
-logo = PhotoImage(file="logoo.png")
-Label(win, image=logo, bd=0).place(x=50,y=0)
-
+#ADD LOGO
+try:
+    logo = PhotoImage(file="logoo.png") #Add logo 
+    Label(win, image=logo, bd=0).place(x=50,y=0)
+except Exception as e:
+    messagebox.showwarning("Warning", f"Logo image not found: {e}")
+    
 #HEADING
 Label(win, text="CYBER SECURITY PROJECT", font="impact 50 bold", bg="black", fg="white").place(x=360,y=12)
 
